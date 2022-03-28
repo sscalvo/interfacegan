@@ -97,7 +97,8 @@ def main():
                                       generate_image=args.generate_image)
 
     for w,image in zip(outputs['w'], outputs['image']): # sscalvo modified
-      # save the cropped image
+      # Taking advantage of StyleGAN2 face alignement, let's crop both eyes 
+      # and save the cropped image to a 224x224 file
       save_path = os.path.join(f'{args.output_dir}/images', f'{fnc:07d}.jpg')
       # crop both eyes and join them in a VGG size image (224x224)
       crop_left  = image[352:(352+224), 347:(347+112)]  
