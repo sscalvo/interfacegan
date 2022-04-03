@@ -1,4 +1,6 @@
-# InterFaceGAN - Interpreting the Latent Space of GANs for Semantic Face Editing
+# Finding Latent Space Boundary Vectors 
+### Based on: InterFaceGAN - Interpreting the Latent Space of GANs for Semantic Face Editing
+
 
 ![Python 3.7](https://img.shields.io/badge/python-3.7-green.svg?style=plastic)
 ![pytorch 1.1.0](https://img.shields.io/badge/pytorch-1.1.0-green.svg?style=plastic)
@@ -8,7 +10,7 @@
 ![image](./docs/assets/teaser.jpg)
 **Figure:** *High-quality facial attributes editing results with InterFaceGAN.*
 
-In this repository, we propose an approach, termed as InterFaceGAN, for semantic face editing. Specifically, InterFaceGAN is capable of turning an unconditionally trained face synthesis model to controllable GAN by interpreting the very first latent space and finding the hidden semantic subspaces.
+This repository is an adaptation of the original InterFaceGAN in which we try to find the boundary vector for any specific feature (in this case, we focus on *eye color*, but you can easily adapt to the feature of your wish) 
 
 [[Paper (CVPR)](https://arxiv.org/pdf/1907.10786.pdf)]
 [[Paper (TPAMI)](https://arxiv.org/pdf/2005.09635.pdf)]
@@ -16,9 +18,11 @@ In this repository, we propose an approach, termed as InterFaceGAN, for semantic
 [[Demo](https://www.youtube.com/watch?v=uoftpl3Bj6w)]
 [[Colab](https://colab.research.google.com/github/genforce/interfacegan/blob/master/docs/InterFaceGAN.ipynb)]
 
-## How to Use
+## How to calculate a boundary vector associated to a semantic feature?
 
-Pick up a model, pick up a boundary, pick up a latent code, and then EDIT!
+ - Choose whatever feature you want to force StyleGAN to move towards (in this case we chose *eyes color*)
+ - Generate between 10k and 50k images: Since we are dealing with eyes, we used ```custom_generate_data.py``` (a custom version of ```generate_data.py``` that generates the faces and crops both eyes joining them together into a single 224x224 image). Use this colab notebook to generate 10k of such images: 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](http://colab.research.google.com/github/rinongal/stylegan-nada/blob/main/stylegan_nada.ipynb) 
 
 ```bash
 # Before running the following code, please first download
