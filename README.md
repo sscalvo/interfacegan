@@ -1,4 +1,4 @@
-# Finding Latent Space Boundary Vectors 
+# Finding StyleGAN Latent Space Boundary Vectors 
 ### Based on: InterFaceGAN - Interpreting the Latent Space of GANs for Semantic Face Editing
 
 
