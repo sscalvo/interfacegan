@@ -70,7 +70,6 @@ def main():
     kwargs = {'latent_space_type': args.latent_space_type}
   else:
     raise NotImplementedError(f'Not implemented GAN type `{gan_type}`!')
-  print("hola")
   os.mkdir(f'{args.output_dir}/images')
   os.mkdir(f'{args.output_dir}/w')
 
