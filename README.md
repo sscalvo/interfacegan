@@ -20,19 +20,24 @@ This repository is an adaptation of the original InterFaceGAN in which we try to
 
  - Choose whatever feature you want to force StyleGAN to move towards (in this case we chose *eyes color*)
  - Generate between 10k and 50k images to train a classifier for your chosen feature: Since we are dealing with eyes, we used ```custom_generate_data.py``` (a custom version of ```generate_data.py``` that generates the faces and crops both eyes joining them together into a single 224x224 image). Use this colab notebook to generate 10k of such images: 
-[![Open In Colab](https://colab.research.google.com/drive/10pS-aIIUrBJJI3HyNAj2x9xh1wGWIzVa?usp=sharing)]
 
-```bash
-# Before running the following code, please first download
-# the pre-trained ProgressiveGAN model on CelebA-HQ dataset,
-# and then place it under the folder ".models/pretrain/".
-LATENT_CODE_NUM=10
-python edit.py \
-    -m pggan_celebahq \
-    -b boundaries/pggan_celebahq_smile_boundary.npy \
-    -n "$LATENT_CODE_NUM" \
-    -o results/pggan_celebahq_smile_editing
-```
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/10pS-aIIUrBJJI3HyNAj2x9xh1wGWIzVa?usp=sharing)
+
+- Manually classify this images into your desired semantics (in our case, *light, brown, black, sunglass*)
+
+![image](./docs/assets/classes.jpg)
+
+- ..and zip it. We will use it to train a classifier neural network.
+
+![image](./docs/assets/labeled_dataset.png)
+
+ - Now you are ready to follow instrucctions of book 2 (we will extract image features using a VGG network, and use them to train our DNN)
+ 
+ [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/18HuLJuez6eYHL9yfjcbkB_kcw4c34NnJ?usp=sharing)
+ 
+ If you want to skip book 2, just download the already [trained dnn model](https://drive.google.com/file/d/1YWb3ptS9cuZ9d5obUxthj1nlwiNZjHtT/view?usp=sharing)
+
+
 
 ## GAN Models Used (Prior Work)
 
