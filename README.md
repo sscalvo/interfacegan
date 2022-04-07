@@ -12,17 +12,14 @@
 
 This repository is an adaptation of the original InterFaceGAN in which we try to find the boundary vector for any specific feature (in this case, we focus on *eye color*, but you can easily adapt to the feature of your wish) 
 
-[[Paper (CVPR)](https://arxiv.org/pdf/1907.10786.pdf)]
-[[Paper (TPAMI)](https://arxiv.org/pdf/2005.09635.pdf)]
-[[Project Page](https://genforce.github.io/interfacegan/)]
-[[Demo](https://www.youtube.com/watch?v=uoftpl3Bj6w)]
-[[Colab](https://colab.research.google.com/github/genforce/interfacegan/blob/master/docs/InterFaceGAN.ipynb)]
+## How to calculate a boundary vector associated to a semantic (eyes color) feature?
 
-## How to calculate a boundary vector associated to a semantic feature?
+![image](./docs/assets/VGG_crop.png)
+**Figure:** *Cropping faces to obtain 224x224 eyes images. The corresponding W vector is saved.*
 
  - Choose whatever feature you want to force StyleGAN to move towards (in this case we chose *eyes color*)
- - Generate between 10k and 50k images: Since we are dealing with eyes, we used ```custom_generate_data.py``` (a custom version of ```generate_data.py``` that generates the faces and crops both eyes joining them together into a single 224x224 image). Use this colab notebook to generate 10k of such images: 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](http://colab.research.google.com/github/rinongal/stylegan-nada/blob/main/stylegan_nada.ipynb) 
+ - Generate between 10k and 50k images to train a classifier for your chosen feature: Since we are dealing with eyes, we used ```custom_generate_data.py``` (a custom version of ```generate_data.py``` that generates the faces and crops both eyes joining them together into a single 224x224 image). Use this colab notebook to generate 10k of such images: 
+[![Open In Colab](https://colab.research.google.com/drive/10pS-aIIUrBJJI3HyNAj2x9xh1wGWIzVa?usp=sharing) 
 
 ```bash
 # Before running the following code, please first download
