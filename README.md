@@ -15,11 +15,12 @@ This repository is an adaptation of the original InterFaceGAN in which we try to
 ## How to calculate a boundary vector associated to a semantic (eyes color) feature?
 
 ![image](./docs/assets/VGG_crop.png)
+
 **Figure:** *Cropping faces to obtain 224x224 eyes images. The corresponding W vector is saved.*
 
  - Choose whatever feature you want to force StyleGAN to move towards (in this case we chose *eyes color*)
  - Generate between 10k and 50k images to train a classifier for your chosen feature: Since we are dealing with eyes, we used ```custom_generate_data.py``` (a custom version of ```generate_data.py``` that generates the faces and crops both eyes joining them together into a single 224x224 image). Use this colab notebook to generate 10k of such images: 
-[![Open In Colab](https://colab.research.google.com/drive/10pS-aIIUrBJJI3HyNAj2x9xh1wGWIzVa?usp=sharing) 
+[![Open In Colab](https://colab.research.google.com/drive/10pS-aIIUrBJJI3HyNAj2x9xh1wGWIzVa?usp=sharing)
 
 ```bash
 # Before running the following code, please first download
