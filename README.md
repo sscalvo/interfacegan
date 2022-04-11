@@ -7,7 +7,7 @@
 ![TensorFlow 1.12.2](https://img.shields.io/badge/tensorflow-1.12.2-green.svg?style=plastic)
 ![sklearn 0.21.2](https://img.shields.io/badge/sklearn-0.21.2-green.svg?style=plastic)
 
-![image](./docs/assets/teaser.jpg)
+![image](./docs/assets/results.jpg)
 **Figure:** *High-quality facial attributes editing results with InterFaceGAN.*
 
 This repository is an adaptation of the original InterFaceGAN in which we try to find the boundary vector for any specific feature (in this case, we focus on *eye color*, but you can easily adapt to the feature of your wish) 
